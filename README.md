@@ -38,6 +38,9 @@ When selecting a project to contribute to, consider the following factors:
 - **Community culture and communication channels**
 - **Issue tracker and contribution guidelines**
 - **Maintainer responsiveness and project activity**
+- **Project size and complexity**: Start with smaller projects or well-documented larger ones
+- **Documentation quality**: Good documentation makes it easier to get started
+- **Beginner-friendly issues**: Look for projects with "good first issue" or "beginner-friendly" labels
 
 Look for projects that align with your interests, skills, and learning goals.
 
@@ -48,6 +51,8 @@ Before contributing, read the project's license. Here are some common open sourc
 - **MIT License**: Permits reuse within proprietary software, with all copies of the licensed software including the MIT License terms and copyright notice.
 - **Apache License 2.0**: Allows for use, modification, distribution, and private use of the software, with no liability or warranty provided by the creators.
 - **GNU General Public License (GPL)**: Requires that any derivative works or modified versions of the software also carry the GPL license.
+- **BSD License**: Similar to MIT, but with slight variations depending on the specific version (2-clause, 3-clause, or 4-clause)
+- **Mozilla Public License 2.0**: A weak copyleft license that allows for mixing with proprietary code
 
 Make sure you understand the implications of how your contributions and code can be used.
 
@@ -197,6 +202,8 @@ Keep your fork synchronized with the upstream repository and stay updated with t
 - [Pro Git Book](https://git-scm.com/book/en/v2)
 - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 - [GitHub Git Handbook](https://guides.github.com/introduction/git-handbook/)
+- [Choose a License](https://choosealicense.com/)
+- [Open Source Friday](https://opensourcefriday.com/)
 
 ## Contributing to This Guide
 
