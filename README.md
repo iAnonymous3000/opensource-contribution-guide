@@ -163,8 +163,6 @@ git fetch                       # Download objects and refs
 
 Use clear and descriptive commit messages to communicate the purpose of your changes effectively.
 
-### Advanced Git Techniques
-
 #### Handling Merge Conflicts
 
 - **Understand Conflicts**: Occur when changes clash between branches.
@@ -174,6 +172,8 @@ Use clear and descriptive commit messages to communicate the purpose of your cha
   - Remove conflict markers after resolving.
   - Test the code to ensure functionality.
 - **Commit Resolutions**: After resolving, commit the changes.
+
+### Advanced Git Techniques
 
 #### Interactive Rebasing
 
