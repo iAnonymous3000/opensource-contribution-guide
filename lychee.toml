@@ -1,0 +1,21 @@
+# Link checker settings used by .github/workflows/checks.yml
+
+max_redirects = 10
+max_retries = 3
+timeout = 30
+user_agent = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
+
+# 403: some sites answer automated clients with a bot challenge even though the page loads in a browser.
+# 429: github.com rate limits bursts of requests. The page exists, but its #anchor goes unchecked.
+accept = ["200..=299", "403", "429"]
+
+# Check that #anchors exist, in our Markdown and in fetched HTML pages.
+# An external link whose #anchor is not in the page's HTML fails.
+# Links to sections of other READMEs on github.com need no exclude: lychee also
+# accepts GitHub's "user-content-" prefix on github.com pages.
+include_fragments = "anchor-only"
+
+exclude = [
+  # Redirects to GitHub sign-in, so the check proves nothing. Test it by hand.
+  '^https://github\.com/iAnonymous3000/opensource-contribution-guide/issues/new',
+]

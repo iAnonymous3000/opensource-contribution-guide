@@ -1,0 +1,80 @@
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Monthly, to catch links that rot. In a public repository GitHub turns this
+    # schedule off after 60 days without activity; check the Actions tab if it stops.
+    # https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule
+    - cron: "17 9 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  style:
+    name: Style and visuals
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: No em or en dashes
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+          bad = []
+          for path in pathlib.Path(".").rglob("*"):
+              if ".git" in path.parts or path.suffix not in {".md", ".svg", ".yml", ".toml", ".py"}:
+                  continue
+              for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+                  if chr(0x2013) in line or chr(0x2014) in line:
+                      bad.append(f"{path}:{number}: {line.strip()[:100]}")
+          if bad:
+              print("Replace em and en dashes with a period, a comma or a new sentence:")
+              print("\n".join(bad))
+              sys.exit(1)
+          print("No long dashes found.")
+          PY
+
+      - name: Install Pillow and DejaVu fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pil fonts-dejavu-core
+
+      - name: Visuals match their source
+        run: |
+          python3 scripts/build_visuals.py --check
+          git status --short -- assets/
+          git diff --exit-code -- assets/
+          test -z "$(git status --porcelain -- assets/)"
+
+  links:
+    name: Links
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Check links
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --config lychee.toml --no-progress './**/*.md'
+          fail: ${{ github.event_name != 'schedule' }}
+
+      - name: Open an issue for broken links
+        if: github.event_name == 'schedule' && steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v6
+        with:
+          title: Broken links found by the monthly check
+          content-filepath: ./lychee/out.md
+          labels: broken-link

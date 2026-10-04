@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="997" viewBox="0 0 680 997" role="img" aria-labelledby="t d">
+<title id="t">One project, three repositories</title>
+<desc id="d">Diagram of the pull request route. On the website: the project (upstream) and your fork (origin). On your computer: your clone of your fork. git fetch upstream copies project commits to your clone; git push -u origin my-fix sends your branch to your fork; a pull request (GitLab: merge request) asks the maintainers to merge it. You add upstream yourself, once.</desc>
+<style>text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; } .cmd { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }</style>
+<rect x="0.5" y="0.5" width="679" height="996" rx="16" fill="#f6f8fa" stroke="#d1d9e0"/>
+<text x="24" y="52" font-size="28" font-weight="700" fill="#1f2328" text-anchor="start">One project, three repositories</text>
+<text x="24" y="89.0" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">How code moves when you contribute through a fork</text>
+<text x="24" y="132.7" font-size="22" font-weight="700" fill="#59636e" text-anchor="start">On GitHub, GitLab or Codeberg</text>
+<rect x="16.5" y="148.7" width="647" height="129.4" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+<rect x="501.1" y="165.3" width="146.9" height="34" rx="17" fill="#ddf4ff"/>
+<text x="574.5" y="190.2" font-size="22" font-weight="700" fill="#0969da" text-anchor="middle">upstream</text>
+<text x="36" y="190.7" font-size="24" font-weight="700" fill="#1f2328" text-anchor="start">The project</text>
+<text x="36" y="226.4" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">The original repository. Its maintainers review and</text>
+<text x="36" y="256.1" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">merge pull requests.</text>
+<text x="614" y="316.1" font-size="24" font-weight="700" fill="#1f2328" text-anchor="end">Pull request</text>
+<text x="614" y="351.8" font-size="22" font-weight="400" fill="#59636e" text-anchor="end">asks the maintainers to merge your branch</text>
+<text x="614" y="381.5" font-size="22" font-weight="400" fill="#59636e" text-anchor="end">GitLab calls it a merge request</text>
+<rect x="64.5" y="399.5" width="599" height="129.4" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+<rect x="548.1" y="416.1" width="99.9" height="34" rx="17" fill="#ddf4ff"/>
+<text x="598.0" y="441.0" font-size="22" font-weight="700" fill="#0969da" text-anchor="middle">origin</text>
+<text x="84" y="441.5" font-size="24" font-weight="700" fill="#1f2328" text-anchor="start">Your fork</text>
+<text x="84" y="477.2" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">Your copy on the website, made once with the</text>
+<text x="84" y="506.9" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">Fork button. You can push to it.</text>
+<line x1="632" y1="399.5" x2="632" y2="290.1" stroke="#0969da" stroke-width="3"/><path d="M623.0 290.1 L641.0 290.1 L632 278.1 Z" fill="#0969da"/>
+<text x="52" y="564.9" font-size="22" font-weight="400" fill="#1f2328" text-anchor="start" class="cmd">git fetch upstream</text>
+<text x="52" y="594.6" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">copies new project commits to your clone</text>
+<text x="614" y="632.6" font-size="22" font-weight="400" fill="#1f2328" text-anchor="end" class="cmd">git push -u origin my-fix</text>
+<text x="614" y="662.3" font-size="22" font-weight="400" fill="#59636e" text-anchor="end">sends your branch to your fork</text>
+<line x1="16" y1="682.3" x2="664" y2="682.3" stroke="#59636e" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="52" y="716.3" font-size="22" font-weight="700" fill="#59636e" text-anchor="start">On your computer</text>
+<rect x="16.5" y="730.3" width="647" height="129.4" rx="12" fill="#ffffff" stroke="#d1d9e0"/>
+<text x="36" y="772.3" font-size="24" font-weight="700" fill="#1f2328" text-anchor="start">Your clone</text>
+<text x="36" y="808.0" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">Made once by cloning your fork. You edit, commit and</text>
+<text x="36" y="837.7" font-size="22" font-weight="400" fill="#59636e" text-anchor="start">run tests here.</text>
+<line x1="36" y1="278.1" x2="36" y2="718.3" stroke="#0969da" stroke-width="3"/><path d="M27.0 718.3 L45.0 718.3 L36 730.3 Z" fill="#0969da"/>
+<line x1="632" y1="730.3" x2="632" y2="540.9" stroke="#0969da" stroke-width="3"/><path d="M623.0 540.9 L641.0 540.9 L632 528.9 Z" fill="#0969da"/>
+<text x="24" y="898.1" font-size="22" font-weight="400" fill="#1f2328" text-anchor="start">Cloning names your fork origin. Name the project</text>
+<text x="24" y="927.8" font-size="22" font-weight="400" fill="#1f2328" text-anchor="start">upstream yourself, once:</text>
+<text x="24" y="961.5" font-size="22" font-weight="400" fill="#1f2328" text-anchor="start" class="cmd">git remote add upstream PROJECT-URL</text>
+</svg>
